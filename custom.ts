@@ -14,25 +14,18 @@ enum MyEnum {
 /**
  * Custom blocks
  */
-//% weight=100 color=#0fbc11 icon=""
-namespace custom {
+//% weight=75 color=#0fbc11 icon=""
+namespace THbit {
     /**
-     * TODO: describe your function here
-     * @param n describe parameter here, eg: 5
-     * @param s describe parameter here, eg: "Hello"
-     * @param e describe parameter here
+     * Blinks an led in milliseconds
+     * @param x x coordinates of blinks
+     * @param y y coordinates of blinks
+     * @param interval time between blinks in milliseconds
      */
-    //% block="Nothing with number $n, str $s, enum $e"
-    export function foo(n: number, s: string, e: MyEnum): void {
-        // Add code here
-    }
-
-    /**
-     * TODO: describe your function here
-     * @param value describe value here, eg: 5
-     */
-    //% block="Compute fib number $value 's value"
-    export function fib(value: number): number {
-        return value <= 1 ? value : fib(value -1) + fib(value - 2);
+    //% block="Blinks at x $x y $y every $interval ms"
+    export function blink(x: number, y: number, interval: number): void {
+        let sprite = game.createSprite(x, y)
+        sprite.setBlink(interval)
+        sprite.blink()
     }
 }
