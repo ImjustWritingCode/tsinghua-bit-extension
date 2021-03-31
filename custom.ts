@@ -23,6 +23,8 @@ namespace THbit {
      * @param interval time between blinks in milliseconds
      */
     //% block="Blinks at x $x y $y every $interval ms"
+    //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
     export function blink(x: number, y: number, interval: number): void {
         let sprite = game.createSprite(x, y)
         sprite.setBlink(interval)
