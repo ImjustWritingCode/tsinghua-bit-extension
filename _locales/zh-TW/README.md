@@ -3,7 +3,7 @@
 
 ## How to use this
 
-### Blink
+### Blink #THbitblink
 
 Blinks an led at designated location (x, y coordinates).
 
