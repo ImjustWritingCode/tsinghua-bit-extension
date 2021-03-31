@@ -14,7 +14,7 @@ enum MyEnum {
 /**
  * Custom blocks
  */
-//% weight=75 color=#0fbc11 icon=""
+//% weight=75 color=#f08c1a icon="\uf11c"
 namespace THbit {
     /**
      * Blinks an led in milliseconds
