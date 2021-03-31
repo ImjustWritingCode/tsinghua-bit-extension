@@ -4,18 +4,13 @@
  * Read more at https://makecode.microbit.org/blocks/custom
  */
 
-enum MyEnum {
-    //% block="one"
-    One,
-    //% block="two"
-    Two
-}
-
 /**
  * Custom blocks
  */
 //% weight=75 color=#f08c1a icon="\uf11c"
 namespace THbit {
+    // create a Ledsprite object for finding led location
+    let sprites: game.LedSprite[] = []
     /**
      * Blinks an led in milliseconds
      * @param x x coordinates of blinks
@@ -27,7 +22,10 @@ namespace THbit {
     //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
     //% interval.shadow=timePicker
     export function blink(x: number, y: number, interval: number): void {
-        let sprite = game.createSprite(x, y)
+        // find an existing sprite
+        let sprite = sprites.find(s => s.x() == x && s.y() == y)
+        if (!sprite)
+            sprite = game.createSprite(x, y)
         sprite.setBlink(interval)
         sprite.blink()
     }
